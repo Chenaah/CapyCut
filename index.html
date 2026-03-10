@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Frame Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Video Frame Viewer</h1>
+        
+        <div class="upload-section">
+            <label for="videoInput" class="upload-btn">
+                Choose Video File
+                <input type="file" id="videoInput" accept="video/*,.mov,.MOV,.mp4,.MP4,.avi,.AVI,.mkv,.MKV,.webm,.WEBM">
+            </label>
+            <span id="fileName">No file selected</span>
+        </div>
+        
+        <div class="tip">
+            <strong>💡 Tip:</strong> Click "Place Dot Mode" button, then click on the video to place a marker
+        </div>
+
+        <div class="video-container" id="videoContainer">
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <canvas id="overlayCanvas"></canvas>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-row">
+                <span class="label">Current Frame:</span>
+                <span id="currentFrame" class="value">0</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Total Frames:</span>
+                <span id="totalFrames" class="value">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Current Time:</span>
+                <span id="currentTime" class="value">0.00s</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Duration:</span>
+                <span id="duration" class="value">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">FPS:</span>
+                <span id="fps" class="value">-</span>
+            </div>
+            <div class="info-row" id="coordinateRow" style="display: none;">
+                <span class="label">Dot Position:</span>
+                <span id="coordinates" class="value">-</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="prevFrame" disabled>← Previous Frame</button>
+            <button id="nextFrame" disabled>Next Frame →</button>
+            <button id="toggleDotMode" disabled>Place Dot Mode</button>
+            <button id="clearDot" disabled>Clear Dot</button>
+            <button id="saveScreenshot" disabled>📷 Save Screenshot</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
