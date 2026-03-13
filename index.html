@@ -62,7 +62,28 @@
             <button id="nextFrame" disabled>Next Frame →</button>
             <button id="toggleDotMode" disabled>Place Dot Mode</button>
             <button id="clearDot" disabled>Clear Dot</button>
+            <button id="flipH" disabled>↔ Flip Horizontal</button>
+            <button id="flipV" disabled>↕ Flip Vertical</button>
             <button id="saveScreenshot" disabled>📷 Save Screenshot</button>
+            <button id="saveVideo" disabled>🎬 Save Flipped Video</button>
+        </div>
+
+        <div id="exportProgress" class="export-progress" style="display: none;">
+            <div class="export-progress-label">
+                <span id="exportStatusText">Exporting video…</span>
+                <span id="exportPercent">0%</span>
+            </div>
+            <div class="export-progress-bar">
+                <div id="exportBar" class="export-bar"></div>
+            </div>
+        </div>
+
+        <div id="exportOptions" class="export-options" style="display: none;">
+            <label class="toggle-label">
+                <input type="checkbox" id="useFfmpeg">
+                <span>🎞️ Export as MP4/MOV (uses WebCodecs + mp4box.js)</span>
+            </label>
+            <span class="toggle-hint">Chrome/Edge 94+ only. Encodes H.264 frame-by-frame — may be slow for long videos.</span>
         </div>
     </div>
 
